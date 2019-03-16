@@ -16,6 +16,13 @@ import './sass/index.css'
 // 把库挂载到原型链
 Vue.prototype.$axios = axios;
 
+//引入elementui
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+
+// ElementUI以插件的形式来扩展Vue的功能
+Vue.use(ElementUI);
+
 Vue.config.productionTip = false;
 
 
