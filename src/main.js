@@ -12,7 +12,10 @@ import axios from 'axios';
 import './js'
 //移动端公共css样式
 import './sass/index.css'
-
+// 挂载mint
+import Mint from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use(Mint)
 // 把库挂载到原型链
 Vue.prototype.$axios = axios;
 
