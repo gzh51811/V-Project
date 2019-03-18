@@ -20,19 +20,26 @@ export default {
 
 <style scoped>
 img{
-  width: 90%;
-  height:46.54px;
-  /* position:absolute; */
+  width: 100%;
+  height:100%;
+  position:absolute;
     
 }
 .mint-swipe{
-  height:46.54px;
+  height:2.5856rem;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  margin: 14px 18px 0 18px;
+
 }
 
 .lbt1{
-    width: 100%;
-    height: 46.54px;
     margin: 14px 18px 0 18px;
+    width: 100%;
+    height: 2.0625rem;
+    margin: 0 auto;
+    padding: 0;
 }
     
 </style>
