@@ -3,7 +3,7 @@
     <div class="topSearch clearfix">
       <div
         class="searchBox recommendSearchBox left clearfix"
-        style="margin-left: 0.2rem;background: white;width: 80%;margin-left: 0.6rem;"
+        style="margin-left: 0.2rem;background: white;width: 75%;margin-left: 0.6rem;"
         >
         
         <a>
