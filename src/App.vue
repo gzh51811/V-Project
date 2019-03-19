@@ -6,6 +6,9 @@
 </template>
 
 <script>
+
+
+
 import Xfooter from './components/Xfooter.vue'
 
 export default {

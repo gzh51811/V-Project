@@ -9,13 +9,23 @@ import store from './store';
 import axios from 'axios';
 
 //移动端跟字体的设置
-import './js'
+import './js/index.js'
 //移动端公共css样式
 import './sass/index.css'
+<<<<<<< HEAD
+
+// 8.引进饿了吗ul插件
+// ElementUI以插件的形式来扩展Vue的功能
+import ElementUI from 'element-ui';
+
+Vue.use(ElementUI);//ElementUI插件的精华。加上去就是
+
+=======
 // 挂载mint
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(Mint)
+>>>>>>> bdbef6955f73a800aaf9879674ad7094b51ddeb7
 // 把库挂载到原型链
 Vue.prototype.$axios = axios;
 

@@ -28,6 +28,8 @@ import AlwaysHappy from '../pages/AlwaysHappy.vue';
 import Cart from '../pages/Cart.vue';
 //我的路由
 import Mine from '../pages/Mine.vue';
+//资讯路由
+import Information from '../pages/Information.vue';
 //不存在404页面
 import NotFound from '../pages/NotFound.vue';
 
@@ -83,6 +85,10 @@ const routes = [
         name:'VideoPlay',
         path:'/videoplay',
         component:VideoPlay  
+    },{
+        name:'Information',
+        path:'/information',
+        component:Information
     },
     // 404
     {
