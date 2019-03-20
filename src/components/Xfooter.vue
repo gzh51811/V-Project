@@ -63,7 +63,14 @@ export default {
   },
 
   // 注意：在数据挂载前修改数据，解决报错问题
-  creared() {}
+  created() {
+    for(var i =0; i<this.navList.length;i++){
+      if(this.navList[i].name==this.$route.name){
+        this.index=i;
+        break;
+      }
+    }
+  }
 };
 </script>
 

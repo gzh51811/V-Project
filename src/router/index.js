@@ -58,7 +58,10 @@ const routes = [
         },{
             name:'Cart',
             path:'cart',
-            component:Cart 
+            component:Cart,
+            meta:{
+                requiresAuth:true
+            } 
         },{
             name:'Mine',
             path:'mine',
@@ -100,5 +103,27 @@ const router = new VueRouter({
     mode: 'hash',
     routes // (缩写) 相当于 routes: routes
 });
+
+// 全局路由守卫
+// 路由拦截：
+router.beforeEach((to,from,next)=>{
+    //to: Route: 即将要进入的目标 路由对象
+    //from: Route: 当前导航正要离开的路由
+    // 需要登录的模块，判断是否已登录
+    if(to.meta.requiresAuth){
+        let token = localStorage.getItem('token');
+        if(token){
+            next();
+        }else{
+        //    console.log('from:',to.fullPath);
+           next({
+               name:'Login',
+               params:{from:to.fullPath}
+           }) 
+        }
+    }else{
+        next();
+    }
+})
 
 export default router
