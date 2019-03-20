@@ -9,15 +9,11 @@
   },
   "dependencies": {
     "element-ui": "^2.6.1",
-<<<<<<< HEAD
-    "vue": "^2.6.6"
-=======
     "express": "^4.16.4",
     "mint-ui": "^2.2.13",
     "mongodb": "^3.1.13",
     "vue": "^2.6.6",
     "vue-jsonp": "^0.1.8"
->>>>>>> bdbef6955f73a800aaf9879674ad7094b51ddeb7
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",

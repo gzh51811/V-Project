@@ -100,13 +100,16 @@ export default {
   float: left;
 }
 #xie_quanvu span {
-  width: 12.05rem;
+  width: 9.55rem;
+  font-size: 0.45rem;
   height: 2.2rem;
   font-size: 0.65rem;
   float: left;
+    
   
 }
 #xie_quanvu p {
+  width: 8rem;
   font-size: 0.65rem;
   /* float: left; */
   margin: 0.5rem 0px 0px 6.5rem;
@@ -121,8 +124,10 @@ export default {
 #xie_quanvu {
   margin: 0px 0px 0.5rem 0px;
   float: left;
-  width: 18.75rem;
+  width: 16rem;
   height: 6rem;
+
+
   
 }
 #xie_kongbai {
@@ -155,8 +160,7 @@ export default {
 }
 #tianjia ul li {
   float: left;
-  /* width: 73px;
-    height: 73px; */
+  
   width: 3.4rem;
   height: 6rem;
   /* background-color: blue; */
@@ -170,6 +174,8 @@ export default {
 }
 #tianjia ul li p {
   font-size: 0.55rem;
+  margin: 0.25rem 0px 0.25rem 0.25rem;
+  font-size: 9px; 
 }
 #tianjia ul li span {
   font-size: 0.55rem;

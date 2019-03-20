@@ -14,7 +14,27 @@
                 <div class="content">
                     <transition name="fade">
                     <div v-show="num == 1">
-                        <xlunbotu/> 
+
+
+
+
+                        <!-- 轮播图 -->
+      <div class="block">
+          <div id="topBanner" style="padding-top: 5px;" class="slide" >
+            <div v-for="(imgUrl, index) in bannerList" v-show="index===mark" :key="index" class="slideshow">
+                  <a href="#">
+                    <img :src=imgUrl >
+                  </a>
+            </div>
+            <div class="bar">
+                   <span v-for="(item, index) in bannerList" :class="{ 'active':index===mark }" :key="index"></span>
+            </div>
+        </div>
+     </div> 
+
+
+
+
                         <!-- tab2切换 -->
                             <div id="hao_tab2">
                                 <el-tabs v-model="activeName" @tab-click="handleClick">
@@ -99,6 +119,8 @@ import Xlunbotu from '../components/Xlunbotu.vue';//引进公共样式轮播图
 export default {
      data() {
       return {
+          mark: 0, //比对图片索引的变量  
+         bannerList:["http://qiniu.withfans.com/59f0026a454a4bd0a0b40f3e914db26c?imageslim","http://qiniu.withfans.com/47989c97627749479695e254d678d769?imageslim","http://qiniu.withfans.com/c4d841b9bf7240beba566ed54fccacd5?imageslim"] ,
          activeName: 'second',      
          num: 1,
          hhh:[],
@@ -108,6 +130,21 @@ export default {
       };
     },
      methods: {
+
+        autoPlay () {  
+      this.mark++;  
+      if (this.mark === 3) { //当遍历到最后一张图片置零  
+        this.mark = 0  
+      }  
+    },  
+    play () {  
+      setInterval(this.autoPlay, 2500)  
+    },  
+    change (i) {  
+      this.mark = i  
+    },
+
+
       change: function(index) {
          this.num = index
       },
@@ -121,8 +158,9 @@ export default {
       }
    },
 
-     
+  
      created(){
+       this.play(),
          window.getDatavv = (data)=>{
           //  console.log('ggg',data.datas)
            this.goodslist=data.datas;
@@ -168,93 +206,105 @@ export default {
 </script>
 
 <style >
+
+.slideshow img{
+  width: 100%;
+  height: 100%;
+  margin-top: 0.4375rem;
+}
+
+.mint-swipe{
+  height: 8rem;
+  margin-top: 2.2rem;
+  
+}
+
 #hao_yuguanfan_1{
-  margin: 0px 0px 13px 0px;
+  margin: 0 0 0.65rem 0;
 }
 #hao_yuguanfan_1 i{
   float: left;
-  font-size: 11px;
-  margin: 3px 0px 0px 10px ;
+  font-size: 0.55rem;
+  margin: 0.15rem 0 0 0.5rem ;
 }
 #hao_yuguanfan_1 span{
-  font-size: 11px;
+  font-size: 0.55rem;
   float: left;
-  margin: 3px 0px 0px 0px ;
+  margin: 0.15rem 0px 0px 0px ;
 }
 #hao_yuguanfan_1 p{
   overflow: hidden;
-  width: 206px;
-  height: 35px;
+  width: 10.3rem;
+  height: 1.75rem;
   float: left;
-  font-size: 11px;
-  margin: 0px 0px 0px 0px;
+  font-size: 0.55rem;
+  
 }
 #hao_yuguanfan_1 h4{
-margin: 4px 0px 14px 9px;
-font-size: 13px;
+margin: 0.2rem 0px 0.7rem 0.45rem;
+font-size: 0.65rem;
 float: left;
 }
 #hao_yuguanfan_1 img{
   display: block;
-  width: 85px;
-  height: 85px;
+  width: 4.25rem;
+  height: 4.25rem;
   float: left;
 }
 #hao_yuguanfan_1{
-  width: 300px;
-  height: 89px;
+  width: 15rem;
+  height: 4.45rem;
   float: left;
-  margin: 14px 0px 0px 9px;
+  margin: 0.7rem 0 0 0.45rem;
 }
 #hao_yuguanfan h1{
-  font-size: 13px;
+  font-size: 0.7rem;
   float: left;
-  margin: 0px 0px 0px 140px;
+  margin: 0 0 0 7rem;
 }
 #kongbai{
-  height: 9px;
+  height: 0.45rem;
   background-color: #FAFAFA;
   float: left;
   width: 100%;
 }
 #hao_huati_1 img{
   border-radius:50px;
-  width: 34px;
-  height: 34px;
-  /* background-color: rebeccapurple; */
+  width: 1.7rem;
+   
   display: block;
   float: left;
 }
 #hao_huati_1 i{
   display: block;
   float: left;
-  font-size: 12px;
+  font-size: 0.6rem;
   float: left;
-  margin: 9px 0px 0px 8px;
+  margin: 0.45rem 0 0 0.4rem;
 }
 #hao_huati_1 span{
   display: block;
   float: left;
-  font-size: 12px;
+  font-size: 0.6rem;
   float: left;
-  margin: 9px 0px 0px 0px;
+  margin: 0.45rem 0 0 0;
 }
 #hao_huati_1{
-  width: 293px;
-  height: 34px;
+  width: 14.6rem;
+  height: 1.65rem;
   /* background-color: #FF7234; */
   float: left;
-  margin: 8px 0px 0px 33px;
+  margin: 0.4rem 0 0 1.65rem;
 }
 #hao_huati h6{
-  margin: 0px 0px 0px 33px;
+  margin: 0 0 0 1.65rem;
   float: left; 
-  font-size: 12px;
+  font-size: 0.6rem;
 }
 #hao_huati p{
-  margin: 0px 0px 0px 133px;
+  margin: 0px 0px 0px 6.65rem;
   float: left;
-  font-size: 12px;
+  font-size: 0.6erem;
   color: #FD6773;
 }
 /* 弹性盒 */
@@ -287,18 +337,18 @@ float: left;
     }
     /* tsb切换 */
    .hao_tab{
-       margin: 1.9rem 0 0 15px;
+       margin: 1.9rem 0 0 0.75rem;
    }
    #hao_tab{
      height: 3rem;
    }
  
    #hao_tab li{
-     border: 1px solid rgb(255, 74, 74);
-     margin: 0.65rem 0px 0px 0px;
+     border: 0.05rem solid rgb(255, 74, 74);
+     margin: 0.65rem 0 0 0;
      float: left;
-     width: 147px;
-     height: 29px;
+     width: 7.35rem;
+     height: 1.45rem;
      background-color: rgb(255, 74, 74);
      border-radius: 0.7rem;
    }
@@ -306,11 +356,11 @@ float: left;
      color:#fff;
      font-size: 0.55rem;
      line-height: 0.55rem;
-     margin: 0px 0px 0px 3.1rem;
+     margin: 0 0 0 3.1rem;
    }
    #hao_tab li:nth-child(1){
      background-color: #fff;
-     margin: 0.65rem -30px 0px 0.65rem;
+     margin: 0.65rem -1.5rem 0px 0.65rem;
    }
   
    #hao_tab li:nth-child(1) span{
@@ -346,18 +396,18 @@ float: left;
   /* 最新内容  */
   #hao_zuixin{
     display: block;
-    width: 287px;
-    height: 94px;
-    margin: 13px 0px 0px 13px;
+    width: 14.3rem;
+    height: 4.7rem;
+    margin: 0.65rem 0px 0px 0.65rem;
   }
  #hao_zuixin:nth-child(1){
-   margin: 0px 0px 0px 13px;
+   margin: 0 0 0 0.65rem;
  }
  #hao_zuixin_img{
    display: block;
-   width: 94px;
-   height: 94px;
-   background-color: blueviolet;
+   width: 4.7rem;
+   height: 4.7rem;
+     background-color: blueviolet;
    float: left;
  }
  #hao_zuixin_p{
@@ -365,40 +415,40 @@ float: left;
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 0.8rem;
-    width: 193px;
-    font-size: 11px;
+    width: 9.65rem;
+    font-size: 0.55rem;
     float: left;
  }
  #hao_zuixin_img_1{
-   margin: 5px 10px 0px 10px;
+   margin: 0.25rem 0.5rem 0px 0.5rem;
    float: left;
-   width: 15px;
-   height: 15px;
+   width: 0.75rem;
+   height: 0.75rem;
    background-color: aqua;
  }
  #hao_zuixin_span{
-   margin: 0PX 0PX 0PX 9PX;
-   font-size: 11px;
+   margin: 0px 0px 0px 0.45rem;
+   font-size: 0.55rem;
  }
 #hao_zuixin_span_1{
       font-size: 0.6rem;
 }
  #hao_zuixin_1{
-    width: 194px; 
-    margin: -8PX 0PX 0PX 94PX;
+    width: 9.7rem; 
+    margin: -8px 0px 0px 4.5rem;
  
  }
  #hao_yingshi{
-   margin: 0PX 0PX 0PX 95PX;
+   margin: 0px 0px 0px 4.75rem;
    font-size: 0.6rem;
  }
  /* tab2 */
   .el-tabs__active-bar.is-top{
-     margin: 0px 30px 0px 115px;
+     margin: 0px 1.5rem 0px 5.75rem;
      background-color: #FF7234;
    }
    #tab-second{
-     margin: 0px 0px 0px 115px;
+     margin: 0px 0px 0px 5.75rem;
      color:black;
    }
 </style>

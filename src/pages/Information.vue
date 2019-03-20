@@ -55,34 +55,34 @@ export default {
 
 <style>
 #hao_dianzan h2{
-    font-size: 15px;
-    margin: 0px 0px 0px 140px;
+    font-size: 0.75rem;
+    margin: 0px 0px 0px 7rem;
     color: red;
 }
 #hao_dianzan h1{
-    font-size: 9px;
-    margin: 0px 0px 0px 150px;
+    font-size: 0.45rem;
+    margin: 0px 0px 0px 7.5rem;
 }
 #hao_dianzan{
     width: 100%;
-    height: 50px;
+    height: 2.5rem;
     float: left;
 }
 #zixunxianqing_p_4{
-    margin: 12px 20px 0px 20px;
+    margin: 0.6rem 1rem 0px 1rem;
     float: left;
 }
 #zixunxianqing_p_5{
-    font-size: 11px;
+    font-size: 0.5rem;
     float: left;
 }
 #zixunxianqing_p_3{
-    margin: 0px 0px 10px 10px;
-    width: 297px;
+    margin: 0px 0px 1rem 1rem;
+    width: 15rem;
     height: 70%;
 }
 #zixunxianqing_p_3_a{
-     margin: 0px 0px 30px 10px;
+     margin: 0px 0px 1.5rem 0.5rem;
     width:80%;
     display: block;
 }
@@ -100,30 +100,30 @@ export default {
         width:100%;
     }
 #zixunxianqing_p_2{
-    font-size: 12px;
-    margin: 0px 10px 15px 10px;
+    font-size: 0.6rem;
+    margin: 0px 0.5rem 0.7rem 0.5rem;
   
 }
 #zixunxianqing_p{
     float: left;
-    margin: 0px 10px 0px 20px;
-    font-size: 15px;
+    margin: 0px 0.5rem 0px 1rem;
+    font-size: 0.7rem;
 }
 #zixunxianqing_p_1{
-    margin: 0px 10px 15px 0px;
-    font-size: 10px;
+    margin: 0px 0.5rem 0.7rem 0.5rem;
+    font-size: 0.5rem ;
     float: left;
 }
 #zixunxianqing_p_1b{
-     margin: 0px 70px 15px 0px;
-    font-size: 10px;
+     margin: 0px 3.5rem 0.7rem 0px;
+    font-size: 0.5rem ;
     float: left;
 }
 #zixunxianqing_p_1a{ 
-     margin: 3px 10px 15px 10px;
-    font-size: 10px;
+     margin: 0.15rem 0.5rem 0.75rem 0.5rem;
+    font-size: 1.05rem;
     float: left;
-    }
+   }
 
 
 </style>
