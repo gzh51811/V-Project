@@ -4,8 +4,10 @@
     <Xfooter/>
    </div>
 </template>
-
 <script>
+
+
+
 import Xfooter from './components/Xfooter.vue'
 
 export default {
@@ -17,5 +19,4 @@ export default {
 </script>
 
 <style>
-
 </style>
