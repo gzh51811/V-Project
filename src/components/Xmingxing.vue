@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="padding30 bgWhite" style="padding: 0.6rem;margin-top: 0.6rem;float:left;">
+    <div class="padding30" style="padding: 0.6rem;margin-top: 0.6rem;float:left;">
       <div class="clearfix huadongTitle">
         <div class="left huodongyinyuan">明星资讯</div>
         <div class="right gengduo">

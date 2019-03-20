@@ -1,14 +1,14 @@
 <template>
     <div class='home'>
        
-        <Xheader />
-         <Xlubolun />
-         <Xlubolun2 />
-         <Xhuodong />
-         <Xdujia />
-         <Xmingxing />
-         <Xtuijian />
-         <Xjingxuan />
+        <Xheader></Xheader>
+         <Xlubolun></Xlubolun>
+         <Xlubolun2></Xlubolun2>
+         <Xhuodong></Xhuodong>
+         <Xdujia></Xdujia>
+         <Xmingxing></Xmingxing>
+         <Xtuijian></Xtuijian>
+         <Xjingxuan></Xjingxuan>
 
     </div>
 </template>
