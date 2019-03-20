@@ -4,7 +4,6 @@
     <Xfooter/>
    </div>
 </template>
-
 <script>
 
 
