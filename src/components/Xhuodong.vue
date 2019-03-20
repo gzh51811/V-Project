@@ -1,11 +1,12 @@
 <template>
   <div>
-    <div class="padding30 bgWhite" style="padding: 0.6rem;margin-top: 0.6rem;background:#FCFCFC;">
+    <div class="padding30" style="padding: 0.6rem;margin-top: 0.6rem;background:#FCFCFC;">
       <div class="clearfix huadongTitle">
         <div class="left huodongyinyuan">活动应援</div>
         <div class="right gengduo">
           <a>更多&gt;</a>
         </div>
+        <!--  -->
       </div>
       <ul class="clearfix listOne">
         <li class="huadongLi" v-for="item in homelist.datasActivitySupport" :key="item.from_id">
@@ -14,7 +15,7 @@
             <img src="../assets/img/dujia.png" alt>
             <div class="dujia">开屏</div>
           </div>
-          <div class="name">{{item.shop_name}}</div>
+          <div class="name">{{item.shop_name}}</div> 
           <div class="clearfix">
             <div class="img left">
               <img
@@ -23,7 +24,6 @@
             </div>
             <div class="left person">{{item.nick_name}}</div>
           </div>
-          <!--  -->
         </li>
       </ul>
     </div>
