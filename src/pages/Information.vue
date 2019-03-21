@@ -5,7 +5,7 @@
             资讯详情</header>
         <!-- 弹性盒 -->
         <div id="hao_tanxinhe">
-            <p id="zixunxianqing_p">#{{goodsinfo.shop_name}}</p>
+            <p id="zixunxianqing_p">{{goodsinfo.shop_name}}</p>
             <p id="zixunxianqing_p_1a">{{goodsinfo.create_time}}</p><p id="zixunxianqing_p_1">资讯来源：</p><p id="zixunxianqing_p_1b">{{goodsinfo.shop_from}}</p>
             <p id="zixunxianqing_p_2" v-html="goodsinfo.shop_detail"></p>
             <img :src="goodsinfo.pic_url" alt="" id="zixunxianqing_p_3_a">
@@ -102,27 +102,31 @@ export default {
 #zixunxianqing_p_2{
     font-size: 0.6rem;
     margin: 0px 0.5rem 0.7rem 0.5rem;
+    color:#999999;
   
 }
 #zixunxianqing_p{
     float: left;
-    margin: 0px 0.5rem 0px 1rem;
+    margin: 0px 0.5rem 1rem 0.5rem;
     font-size: 0.7rem;
 }
 #zixunxianqing_p_1{
     margin: 0px 0.5rem 0.7rem 0.5rem;
     font-size: 0.5rem ;
     float: left;
+    color:#999999;
 }
 #zixunxianqing_p_1b{
      margin: 0px 3.5rem 0.7rem 0px;
     font-size: 0.5rem ;
     float: left;
+    color: red;
 }
 #zixunxianqing_p_1a{ 
      margin: 0.15rem 0.5rem 0.75rem 0.5rem;
-    font-size: 1.05rem;
+    font-size: 0.55rem;
     float: left;
+     color:#999999;
    }
 
 

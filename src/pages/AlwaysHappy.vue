@@ -98,21 +98,25 @@ export default {
   margin: 1rem 3.5rem 0px 0px;
   font-size: 0.65rem;
   float: left;
+  color: #999999;
 }
 #xie_quanvu span {
+  margin: 0.5rem 0 0 0;
   width: 9.55rem;
-  font-size: 0.45rem;
+  font-size: 0.65rem;
   height: 2.2rem;
-  font-size: 0.65rem;
-  float: left;
-    
   
+  float: left;
 }
+
 #xie_quanvu p {
-  width: 8rem;
+  padding: 0.2rem;
+  width: 6rem;
   font-size: 0.65rem;
-  /* float: left; */
-  margin: 0.5rem 0px 0px 6.5rem;
+  border-radius: 30%;
+ 
+  margin: 0rem 0px 0.25rem 6.5rem;
+  
 }
 #xie_quanvu img {
   float: left;
@@ -144,6 +148,7 @@ export default {
   overflow-y: auto;
 }
 #aidou p {
+  
   float: left;
   font-size: 0.8rem;
 }
@@ -168,6 +173,7 @@ export default {
   overflow: hidden;
 }
 #tianjia ul li img {
+  border-radius: 50%;
   display: block;
   width: 3.4rem;
   height: 3.4rem;
@@ -179,5 +185,6 @@ export default {
 }
 #tianjia ul li span {
   font-size: 0.55rem;
+  color: #999999;
 }
 </style>

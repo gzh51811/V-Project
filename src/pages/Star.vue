@@ -51,6 +51,9 @@
                                            <span id="hao_yingshi">{{item.information_type}}</span>
                                       </div>
                                     </div>
+
+
+                                   
         
                                 </el-tab-pane>
 
@@ -162,7 +165,7 @@ export default {
      created(){
        this.play(),
          window.getDatavv = (data)=>{
-          //  console.log('ggg',data.datas)
+           console.log('ggg',data.datas)
            this.goodslist=data.datas;
          }
           window.getData = (data)=>{
@@ -174,7 +177,7 @@ export default {
            this.xxx=data.datas;
          }
             window.getDatahh = (data)=>{
-           console.log('ggg',data.datas)
+          //  console.log('ggg',data.datas)
            this.hhh=data.datas;
          }
         
@@ -226,22 +229,27 @@ export default {
   float: left;
   font-size: 0.55rem;
   margin: 0.15rem 0 0 0.5rem ;
+  color: #666666; 
 }
 #hao_yuguanfan_1 span{
   font-size: 0.55rem;
   float: left;
-  margin: 0.15rem 0px 0px 0px ;
+  margin: 0.15rem 0 0 0 ;
+  color: #666666; 
 }
 #hao_yuguanfan_1 p{
   overflow: hidden;
   width: 10.3rem;
-  height: 1.75rem;
+  height: 2.45rem;
   float: left;
   font-size: 0.55rem;
+   margin: 0 0 0 0;
+   color: #666666; 
+ 
   
 }
 #hao_yuguanfan_1 h4{
-margin: 0.2rem 0px 0.7rem 0.45rem;
+margin: 0rem 0 0.2rem 0.45rem;
 font-size: 0.65rem;
 float: left;
 }
@@ -269,7 +277,7 @@ float: left;
   width: 100%;
 }
 #hao_huati_1 img{
-  border-radius:50px;
+  border-radius:50;
   width: 1.7rem;
    
   display: block;
@@ -292,7 +300,7 @@ float: left;
 #hao_huati_1{
   width: 14.6rem;
   height: 1.65rem;
-  /* background-color: #FF7234; */
+  
   float: left;
   margin: 0.4rem 0 0 1.65rem;
 }
@@ -302,9 +310,9 @@ float: left;
   font-size: 0.6rem;
 }
 #hao_huati p{
-  margin: 0px 0px 0px 6.65rem;
+  margin: 0 0 0 6.65rem;
   float: left;
-  font-size: 0.6erem;
+  font-size: 0.6rem;
   color: #FD6773;
 }
 /* 弹性盒 */
@@ -360,7 +368,7 @@ float: left;
    }
    #hao_tab li:nth-child(1){
      background-color: #fff;
-     margin: 0.65rem -1.5rem 0px 0.65rem;
+     margin: 0.65rem -1.5rem 0 0.65rem;
    }
   
    #hao_tab li:nth-child(1) span{
@@ -398,7 +406,7 @@ float: left;
     display: block;
     width: 14.3rem;
     height: 4.7rem;
-    margin: 0.65rem 0px 0px 0.65rem;
+    margin: 0.65rem 0 0 0.65rem;
   }
  #hao_zuixin:nth-child(1){
    margin: 0 0 0 0.65rem;
@@ -411,44 +419,49 @@ float: left;
    float: left;
  }
  #hao_zuixin_p{
-    max-height: 1.52rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 0.8rem;
-    width: 9.65rem;
-    font-size: 0.55rem;
+    width: 9.35rem;
+    height: 1.75rem;
+    margin: 0.15rem 0 0 0; 
+    font-size: 0.65rem;
     float: left;
+   
  }
  #hao_zuixin_img_1{
-   margin: 0.25rem 0.5rem 0px 0.5rem;
-   float: left;
-   width: 0.75rem;
-   height: 0.75rem;
-   background-color: aqua;
+   /* display: block; */
+  position: relative;
+    left: -4.9rem;
+    top: 1.8rem;
+  
  }
  #hao_zuixin_span{
-   margin: 0px 0px 0px 0.45rem;
+   display: block;
+   margin: 0.95rem 0 0.2rem 0; 
    font-size: 0.55rem;
+   float: left;
+   color: #999999;
  }
 #hao_zuixin_span_1{
       font-size: 0.6rem;
+      position: relative;
+    left: 1.4rem;
+    top: -0.3rem;
+    color: #999999;
 }
- #hao_zuixin_1{
-    width: 9.7rem; 
-    margin: -8px 0px 0px 4.5rem;
  
- }
  #hao_yingshi{
-   margin: 0px 0px 0px 4.75rem;
+   margin: 0 0 0 4.75rem;
    font-size: 0.6rem;
+     position: relative;
+    color: #999999;
+    top: -0.3rem;
  }
  /* tab2 */
   .el-tabs__active-bar.is-top{
-     margin: 0px 1.5rem 0px 5.75rem;
+     margin: 0 1.5rem 0 5.75rem;
      background-color: #FF7234;
    }
    #tab-second{
-     margin: 0px 0px 0px 5.75rem;
+     margin: 0 0 0 5.75rem;
      color:black;
    }
 </style>
