@@ -6,7 +6,6 @@
         <div class="right gengduo">
           <a>更多&gt;</a>
         </div>
-        <!--  -->
       </div>
       <ul class="clearfix listOne">
         <li class="huadongLi" v-for="item in homelist.datasActivitySupport" :key="item.from_id">
@@ -25,6 +24,7 @@
             <div class="left person">{{item.nick_name}}</div>
           </div>
         </li>
+    
       </ul>
     </div>
   </div>
@@ -32,18 +32,18 @@
 
 
 <script>
+
 export default {
   data() {
     return {
       homelist: []
     };
   },
-  created() {
+  mounted() {
     let script = document.createElement("script");
     window.getDatavv = data => {
-      console.log('ggg',data);
+      // console.log('ggg',data);
       this.homelist=data;
-      // this.goodslist = data.datas;
     };
     script.src =
       "https://www.withfans.com/FHADMINM/appProduct/queryHomeActivityAndInformationList?callback=getDatavv&FKEY=cbcea0f60488f87d4dd6f7a6ffedd47c&_=1552977770433";
