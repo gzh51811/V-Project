@@ -39,7 +39,7 @@ export default {
       homelist: []
     };
   },
-  mounted() {
+  created() {
     let script = document.createElement("script");
     window.getDatavv = data => {
       // console.log('ggg',data);

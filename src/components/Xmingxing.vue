@@ -47,15 +47,15 @@ export default {
       homelist: []
     };
   },
-  created() {
+  mounted() {
     let script = document.createElement("script");
-    window.getDatavv = data => {
+    window.getDatagg = data => {
       // console.log('ggg',data)
       this.homelist=data;
       // this.goodslist = data.datas;
     };
     script.src =
-      "https://www.withfans.com/FHADMINM/appProduct/queryHomeActivityAndInformationList?callback=getDatavv&FKEY=cbcea0f60488f87d4dd6f7a6ffedd47c&_=1552977770433";
+      "https://www.withfans.com/FHADMINM/appProduct/queryHomeActivityAndInformationList?callback=getDatagg&FKEY=cbcea0f60488f87d4dd6f7a6ffedd47c&_=1552977770433";
     document.body.appendChild(script);
   }
 };
