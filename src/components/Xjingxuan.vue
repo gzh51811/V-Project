@@ -98,7 +98,7 @@ export default {
 .larger-view .hotProductItem {
   width: 49.6%;
   float: left;
-  margin-bottom: 0.16rem;
+  margin-bottom: 2.4rem;
 }
 .hotProductItem {
   background: #fff;
