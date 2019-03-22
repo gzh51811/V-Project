@@ -8,7 +8,7 @@
         </div>
       </div>
       <ul class="hotProductList clearfix">
-        <li class="hotProductItem findeItem" v-for="item in homelist.datasInformation" :key="item.shopcommon_id">
+        <li class="hotProductItem findeItem" v-for="item in homelist.datasInformation" :key="item.shopcommon_id" @click="goDetail(item.shopcommon_id)">
           <a
             class="clearfix"
           >
@@ -46,6 +46,11 @@ export default {
     return {
       homelist: []
     };
+  },
+  methods:{
+    goDetail(id){
+      this.$router.push({name:'Information',params:{id}});
+    }
   },
   mounted() {
     let script = document.createElement("script");

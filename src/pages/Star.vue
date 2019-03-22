@@ -1,7 +1,8 @@
 <template>
     <div>
         <!-- 头部 -->
-        <header class="topTitleBack ">星踪</header>
+       <header class="topTitleBack ">星踪</header>
+       
         <!-- tab切换 -->
           <div class="hao_tab">
             <div id="app">
@@ -156,7 +157,7 @@ export default {
       },
 
       //传参数到Information.vue
-      goto(id){console.log(id);
+      goto(id){
         this.$router.push({name:'Information',params:{id}})
       }
    },
@@ -209,6 +210,12 @@ export default {
 </script>
 
 <style >
+#tab-second{
+   font-size: 0.7rem;
+}
+#tab-first{
+  font-size: 0.7rem;
+}
 
 .slideshow img{
   width: 100%;
@@ -234,7 +241,7 @@ export default {
 #hao_yuguanfan_1 span{
   font-size: 0.55rem;
   float: left;
-  margin: 0.15rem 0 0 0 ;
+  margin: 0.15rem 0 0 0.45rem ;
   color: #666666; 
 }
 #hao_yuguanfan_1 p{
@@ -243,7 +250,7 @@ export default {
   height: 2.45rem;
   float: left;
   font-size: 0.55rem;
-   margin: 0 0 0 0;
+   margin: 0 0 0 0.45rem;
    color: #666666; 
  
   
@@ -324,6 +331,7 @@ float: left;
       right:0;
       bottom: 2.16rem;
       overflow-y: auto;
+      width: 100%;
     }
 
    /* 头部 */
@@ -415,13 +423,12 @@ float: left;
    display: block;
    width: 4.7rem;
    height: 4.7rem;
-     background-color: blueviolet;
    float: left;
  }
  #hao_zuixin_p{
     width: 9.35rem;
     height: 1.75rem;
-    margin: 0.15rem 0 0 0; 
+    margin: 0.15rem 0 0 0.25rem; 
     font-size: 0.65rem;
     float: left;
    
@@ -435,12 +442,13 @@ float: left;
  }
  #hao_zuixin_span{
    display: block;
-   margin: 0.95rem 0 0.2rem 0; 
+   margin: 0.95rem 0 0.2rem 0.25rem; 
    font-size: 0.55rem;
    float: left;
    color: #999999;
  }
 #hao_zuixin_span_1{
+  margin: 0 0 0 0.3rem; 
       font-size: 0.6rem;
       position: relative;
     left: 1.4rem;
@@ -449,8 +457,8 @@ float: left;
 }
  
  #hao_yingshi{
-   margin: 0 0 0 4.75rem;
-   font-size: 0.6rem;
+   margin: 0 0 0 5.75rem;
+   font-size: 0.64rem;
      position: relative;
     color: #999999;
     top: -0.3rem;
