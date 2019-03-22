@@ -40,7 +40,7 @@ export default {
     window.getDatavv = data => {
     //    console.log('ggg',data)
        this.goodsinfo=data.datas;
-    console.log(this.goodsinfo);
+    // console.log(this.goodsinfo);
    
     };
     let script = document.createElement("script");

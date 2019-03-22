@@ -2,7 +2,11 @@
   <div class="cartBox">
     <header class="topTitleBack">
       购物车
-      <span class="titRightText">编辑</span>
+      <div class="zhuangtai" @click="zhuangtai()">
+        <span class="titRightText" v-show="show">编辑</span>
+      <span class="titRightText" v-show="none">完成</span>
+      </div>
+      
     </header>
     <div class="no bgWhite">
       <img src="../assets/img/cart02.png">
@@ -13,27 +17,74 @@
         <div class="dianjiaNameBox clearfix list">
           <div class="checkImg left">
             <label>
-              <input type="checkbox" class="checkAll">
+              <input type="checkbox" class="checkAll" v-model="checkAll">
               <!-- <img src="../assets/img/cart03.png"> -->
+              <span class="left dianjiaName">购物清单</span>
             </label>
           </div>
-          <span class="left dianjiaName">金钟大吧_CHENbar</span>
         </div>
-        <ul class="cartList bgWhite clearfix">
-          <li class="clearfix cartItem cartProduct">
-            <div class="label  productCheckIimg">
-              
-                <input type="checkbox">
-                <img src="../assets/img/cart04.png">
-              
+        <ul class="cartList" v-for="(item,idx) in cartlist" :key="item.goods_id">
+          <li class="artProduct">
+            <div class="label fl checkImg left productCheckIimg">
+              <label>
+                <input type="checkbox" class="selected" v-model="selected" :value="idx" @click="heji(idx)">
+              </label>
+            </div>
+            <a class="productLink">
+              <span class="cartProductImg">
+                <img :src="item.head_img">
+              </span>
+              <div class="rightInfo">
+                <div class="productName">
+                  <p class="productLabelName">
+                    <span class="bgyellow">{{item.shop_label}}</span>
+                    &nbsp;&nbsp;
+                    {{item.shop_name}}
+                  </p>
+                  <div class="cartProcuctInfo">{{item.shop_label}}</div>
+                </div>
+                <div class="cartProcuctInfo"></div>
+              </div>
+            </a>
+            <div class="rightBotPosition">
+              <div class="cartnumBox">
+                <ul class="add_cut">
+                  <li class="add_cut_btn1" @click="numJian(idx)">
+                    <img class="num-jian" src="../assets/img/cart06.png">
+                  </li>
+                  <li class="input-num">
+                    <input class="number" ref="inputNum" :value="item.qty">
+                  </li>
+                  <li class="add_cut_btn2" @click="numJia(idx)">
+                    <img class="num-jia" src="../assets/img/cart07.png">
+                  </li>
+                </ul>
+              </div>
+              <div class="yPrice">
+                <span class="left">￥</span>
+                <span class="left sellPrice" ref="danjia">{{item.current_price}}</span>
+              </div>
             </div>
           </li>
         </ul>
-        <!-- <p class="total" style="display: none;">
-          一共
-          <number>0</number>件商品：
-          <span>￥0.00</span>
-        </p>-->
+      </div>
+    </div>
+    <!-- 结算 -->
+    <div class="jiesuan">
+      <div class="checkImg">
+        <label>
+          <input type="checkbox" class="checkAll2" v-model="checkAll">
+        </label>
+      </div>
+      <p class="dianjiaName">全选</p>
+      <div class="footTotal">
+        <span class="heji">合计：</span>
+        <span class="totalMoney">{{total}}</span>
+        <button class="sett">
+          <span class="jiezhang" v-show="show">结算(</span>
+          <span class="jiezhang" v-show="none">删除(</span>
+          <span class="productNum">{{productNum}}</span>)
+        </button>
       </div>
     </div>
   </div>
@@ -41,7 +92,85 @@
 
 <script>
 import "../sass/Cart.scss";
-export default {};
+import { mapState, mapMutations } from "vuex";
+export default {
+  data() {
+    return {
+      selected: [],
+      show:true,
+      none:false,
+      total:0, //总价
+    };
+  },
+  computed: {
+    ...mapState(["cartlist"]),
+    productNum(){
+      return this.$store.state.cartlist.length;
+    },
+    checkAll: {
+      get() {
+        return this.cartlist.every((goods, idx) => this.selected.includes(idx));
+      },
+      set(checked) {
+        this.selected = checked ? this.cartlist.map((item, idx) => idx) : [];
+      }
+    },
+    
+      
+  },
+
+  methods: {
+    numJian(idx) {
+      let price = this.$store.state.cartlist[idx].current_price
+      let num = this.$refs.inputNum[idx].value;
+      if (num > 1) {
+        num--;
+      } else {
+        num = 1;
+      }
+      this.$refs.inputNum[idx].value = num;
+      this.$refs.danjia[idx].innerText=num*price;
+      
+    },
+    numJia(idx){
+      let price = this.$store.state.cartlist[idx].current_price
+      let num = this.$refs.inputNum[idx].value;
+      num++
+      this.$refs.inputNum[idx].value = num;
+      this.$refs.danjia[idx].innerText=num*price;
+      
+    },
+    zhuangtai(){
+      this.show = !this.show;
+      this.none = !this.none;
+    },
+    heji(idx){console.log(this.cartlist[idx])
+        var totalPrice = 0;//临时总价
+        var qty = this.cartlist[idx].qty;
+        var price = this.cartlist[idx].current_price;
+         totalPrice += qty*price;
+        this.total =parseFloat(totalPrice);
+
+    },
+    
+    ...mapMutations({
+      remove: "removeGoods"
+    })
+    // select(idx) {
+    //   // 获取idx在数组中的位置
+    //   let index = this.selected.indexOf(idx);
+    //   if (index >= 0) {
+    //     // 如果当前已勾选，则取消勾选
+    //     this.selected.splice(index, 1);
+    //   } else {
+    //     this.selected.push(idx);
+    //   }
+    // }
+  },
+    crated(){
+      this.heji();
+  },
+};
 </script>
 
 <style lang="scss" scoped>

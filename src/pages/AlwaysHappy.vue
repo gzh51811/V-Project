@@ -33,7 +33,7 @@
       <!-- 空白区 -->
       <div id="xie_kongbai">全部商品</div>
 
-      <div id="xie_quanvu" v-for="item in iii" :key="item.shopcommon_id">
+      <div id="xie_quanvu" v-for="item in iii" :key="item.shopcommon_id" @click="goDetail(item.shopcommon_id)">
         <img :src="item.pic_url" alt>
         <p>{{item.shop_label}}</p>
         <span>{{item.shop_name}}</span>
@@ -53,6 +53,11 @@ export default {
       iii: []
     };
   },
+  methods:{
+    goDetail(id){
+      this.$router.push({name:'Detail',params:{id}});
+    }
+  },
 
   created() {
     window.getDatavv = data => {
@@ -65,7 +70,7 @@ export default {
     };
 
     window.getDatahiu = data => {
-      console.log("ggg", data.datas);
+      // console.log("ggg", data.datas);
       this.iii = data.datas;
     };
 
@@ -81,7 +86,7 @@ export default {
 
     let script2 = document.createElement("script");
     script2.src =
-      "https://www.withfans.com/FHADMINM/appProduct/queryYUProductList3_v?callback=getDatahiu&pageNo=2&pageSize=20&FKEY=cbcea0f60488f87d4dd6f7a6ffedd47c&virtualuser_id=&type=2&_=1552993383794";
+      "https://www.withfans.com/FHADMINM/appProduct/queryYUProductList3_v?callback=getDatahiu&pageNo=1&pageSize=20&FKEY=cbcea0f60488f87d4dd6f7a6ffedd47c&virtualuser_id=&type=2&_=1553085256807";
     document.body.appendChild(script2);
   }
 };
@@ -105,7 +110,7 @@ export default {
   width: 9.55rem;
   font-size: 0.65rem;
   height: 2.2rem;
-  
+
   float: left;
 }
 
@@ -114,25 +119,20 @@ export default {
   width: 6rem;
   font-size: 0.65rem;
   border-radius: 30%;
- 
+
   margin: 0rem 0px 0.25rem 6.5rem;
-  
 }
 #xie_quanvu img {
   float: left;
   display: block;
   height: 6rem;
   width: 6rem;
-  
 }
 #xie_quanvu {
   margin: 0px 0px 0.5rem 0px;
   float: left;
   width: 16rem;
   height: 6rem;
-
-
-  
 }
 #xie_kongbai {
   font-size: 0.75rem;
@@ -148,7 +148,6 @@ export default {
   overflow-y: auto;
 }
 #aidou p {
-  
   float: left;
   font-size: 0.8rem;
 }
@@ -165,7 +164,7 @@ export default {
 }
 #tianjia ul li {
   float: left;
-  
+
   width: 3.4rem;
   height: 6rem;
   /* background-color: blue; */
@@ -181,7 +180,7 @@ export default {
 #tianjia ul li p {
   font-size: 0.55rem;
   margin: 0.25rem 0px 0.25rem 0.25rem;
-  font-size: 9px; 
+  font-size: 9px;
 }
 #tianjia ul li span {
   font-size: 0.55rem;

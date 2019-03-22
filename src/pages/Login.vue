@@ -1,7 +1,7 @@
 <template>
   <div>
     <header class="topTitleBack">
-      <a class="backBtn">
+      <a class="backBtn" @click="goback()">
         <img src="../assets/img/reg02.png">
       </a>
       登录
@@ -39,7 +39,7 @@
         <a class="eyes_box" data-show="1">
           <img src="../assets/img/reg10.png">
         </a>
-        <p class="error" v-show="errorTip">手机、邮箱或者密码错误</p>
+        <p class="error" v-show="errorTip">用户名或者密码错误</p>
       </div>
       <a class="fontColor24 forgetPssword">忘记密码？</a>
       <button class="loginBtn bgRed" @click="login">登录</button>
@@ -113,7 +113,11 @@ export default {
     },
     goto(){
       this.$router.push('/reg')
+    },
+    goback(){
+      this.$router.push('/app/mine');
     }
+    
   },
   created(){
   

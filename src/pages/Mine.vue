@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="yan_tanxinghe">
-            <img src="../assets/img/Mine01.png" alt="" id="yan_toubu">
+            <img src="../assets/img/Mine01.png" alt="" id="yan_toubu" @click="gologin()">
             
             <div id="yan_ulli">
                 <ul>
@@ -27,6 +27,11 @@ export default {
     data(){
         return{
 
+        }
+    },
+    methods:{
+        gologin(){
+            this.$router.push('/login')
         }
     }
 }
