@@ -8,7 +8,7 @@
         </div>
       </div>
       <ul class="hotProductList clearfix">
-        <li class="hotProductItem findeItem" v-for="item in homelist.datasInformation" :key="item.shopcommon_id">
+        <li class="hotProductItem findeItem" v-for="item in homelist.datasInformation" :key="item.shopcommon_id" @click="goDetail(item.shopcommon_id)">
           <a
             class="clearfix"
           >
@@ -47,15 +47,20 @@ export default {
       homelist: []
     };
   },
-  created() {
+  methods:{
+    goDetail(id){
+      this.$router.push({name:'Information',params:{id}});
+    }
+  },
+  mounted() {
     let script = document.createElement("script");
-    window.getDatavv = data => {
+    window.getDatagg = data => {
       // console.log('ggg',data)
       this.homelist=data;
       // this.goodslist = data.datas;
     };
     script.src =
-      "https://www.withfans.com/FHADMINM/appProduct/queryHomeActivityAndInformationList?callback=getDatavv&FKEY=cbcea0f60488f87d4dd6f7a6ffedd47c&_=1552977770433";
+      "https://www.withfans.com/FHADMINM/appProduct/queryHomeActivityAndInformationList?callback=getDatagg&FKEY=cbcea0f60488f87d4dd6f7a6ffedd47c&_=1552977770433";
     document.body.appendChild(script);
   }
 };

@@ -7,7 +7,7 @@
           <a>更多&gt;</a>
         </div>
       </div>
-      <div class="dujiaImg1">
+      <div class="dujiaImg1" @click="goto()">
         <img
           src="http://qiniu.withfans.com/5e7f55624b964bf48c75b012c4dee442"
           data-shopcommon_id="5276"
@@ -33,6 +33,11 @@ export default {
   data() {
     return {};
 
+  },
+  methods:{
+    goto(){
+      this.$router.push('/videoplay');
+    }
   }
 };
 </script>

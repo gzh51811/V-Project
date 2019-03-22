@@ -3,105 +3,27 @@
     <div class="proListBox" style="float:left;">
       <div class="content larger-view bgGray">
         <ul class="recommendProductList clearfix list1">
-          <li class="hotProductItem" style="height: 238.5px;">
+          <li class="hotProductItem" style="height: 238.5px;" v-for="item in homelist.datas" :key="item.shopcommon_id"  @click="gotoDetil(item.shopcommon_id)">
             <a class="productLink clearfix">
               <div class="leftImg left">
-                <img src="http://qiniu.withfans.com/fafe513c978848328d90e5c0b74399a6?imageslim">
+                <img :src="item.pic_url">
               </div>
               <div class="rightInfo right">
                 <div class="productName clearfix">
                   <p class="productLabelName fontColor28">
-                    <span class="bgyellow productLabel left"></span>&nbsp;&nbsp;【EXO吧团购】EXO应援棒代购定金
+                    <span class="bgyellow productLabel left"></span>&nbsp;&nbsp;{{item.shop_name}}
                   </p>
                 </div>
               </div>
             </a>
             <div class="nums-subscription clearfix">
               <div class="rightSubscription right">
-                <span class="sellPrice fontCurRed left marginR5">￥50.00</span>
-                <span class="sellNumBox fontColor24 left" style="padding-top: 0;">已售出23831件</span>
+                <span class="sellPrice fontCurRed left marginR5">{{item.current_price}}</span>
+                <span class="sellNumBox fontColor24 left" style="padding-top: 0;">已经售出{{item.sale_no}}件</span>
               </div>
             </div>
           </li>
-          <li
-            class="zhuantiImg"
-            data-content="Hottracks正式开启中国直邮销售啦，提供最快捷的直邮配送服务，由Hottracks韩国总部直接配送，提供各种Hottracks活动与签名会参选。购买订单发行后首日反应三大榜单为爱豆打榜，Gaon chart 总榜、Gaon chart 实销榜、Hanteo chart榜。"
-            data-details_img_url
-            data-subject_type="shop"
-            data-shopcommon_id="5217"
-            data-shop_name="hks官方合作商城正式上线"
-            style="background-image: url(&quot;http://qiniu.withfans.com/eded9aca3eb64694b5b0b70a23f4f737&quot;); background-repeat: no-repeat; height: 238.5px;"
-          ></li>
-          <li
-            class="zhuantiImg"
-            data-content="是舞台上的精灵，是才华横溢的唱作新人，也是踩点稳准的实力dancer ， 光芒不止于舞台，请继续在梦想的路上发光发热吧,Nana会一直在你的身后！！！#Justin黄明昊0219生日快乐# "
-            data-details_img_url
-            data-subject_type="video"
-            data-shopcommon_id="4962"
-            data-shop_name="Justin黄明昊0219生日快乐"
-            style="background-image: url(&quot;http://qiniu.withfans.com/bd230b501012455cba17da6e0f22b4a7&quot;); background-repeat: no-repeat; height: 238.5px;"
-          ></li>
-
-          <!--  -->
-                    <li class="hotProductItem" style="height: 238.5px;">
-            <a class="productLink clearfix">
-              <div class="leftImg left">
-                <img src="http://qiniu.withfans.com/d8f85a874ffc459aad26d1986402aa19?imageslim">
-              </div>
-              <div class="rightInfo right">
-                <div class="productName clearfix">
-                  <p class="productLabelName fontColor28">
-                    <span class="bgyellow productLabel left"></span>&nbsp;&nbsp;【EXO吧团购】EXO应援棒代购定金
-                  </p>
-                </div>
-              </div>
-            </a>
-            <div class="nums-subscription clearfix">
-              <div class="rightSubscription right">
-                <span class="sellPrice fontCurRed left marginR5">￥50.00</span>
-                <span class="sellNumBox fontColor24 left" style="padding-top: 0;">已售出23831件</span>
-              </div>
-            </div>
-          </li>
-          <li
-            class="zhuantiImg"
-            data-content="Hottracks正式开启中国直邮销售啦，提供最快捷的直邮配送服务，由Hottracks韩国总部直接配送，提供各种Hottracks活动与签名会参选。购买订单发行后首日反应三大榜单为爱豆打榜，Gaon chart 总榜、Gaon chart 实销榜、Hanteo chart榜。"
-            data-details_img_url
-            data-subject_type="shop"
-            data-shopcommon_id="5217"
-            data-shop_name="hks官方合作商城正式上线"
-            style="background-image: url(&quot;http://qiniu.withfans.com/76f7425ce09b43cfa2d28ceb6f3755da&quot;); background-repeat: no-repeat; height: 238.5px;"
-          ></li>
-<!--  -->
-          <li class="hotProductItem" style="height: 238.5px;">
-            <a class="productLink clearfix">
-              <div class="leftImg left">
-                <img src="http://qiniu.withfans.com/e2db1daf5db3435aa3689bab1bbd5be9">
-              </div>
-         
-            </a>
-          </li>
-          <li
-            class="zhuantiImg"
-            data-content="Hottracks正式开启中国直邮销售啦，提供最快捷的直邮配送服务，由Hottracks韩国总部直接配送，提供各种Hottracks活动与签名会参选。购买订单发行后首日反应三大榜单为爱豆打榜，Gaon chart 总榜、Gaon chart 实销榜、Hanteo chart榜。"
-            data-details_img_url
-            data-subject_type="shop"
-            data-shopcommon_id="5217"
-            data-shop_name="hks官方合作商城正式上线"
-            style="background-image: url(&quot;http://qiniu.withfans.com/96eccd9b24ed4f4b873aec078e40565d&quot;); background-repeat: no-repeat; height: 238.5px;"
-          ></li>
-          <li
-            class="zhuantiImg"
-            data-content="是舞台上的精灵，是才华横溢的唱作新人，也是踩点稳准的实力dancer ， 光芒不止于舞台，请继续在梦想的路上发光发热吧,Nana会一直在你的身后！！！#Justin黄明昊0219生日快乐# "
-            data-details_img_url
-            data-subject_type="video"
-            data-shopcommon_id="4962"
-            data-shop_name="Justin黄明昊0219生日快乐"
-            style="background-image: url(&quot;http://qiniu.withfans.com/bd230b501012455cba17da6e0f22b4a7&quot;); background-repeat: no-repeat; height: 238.5px;"
-          ></li>
-
-          <!--  -->
-
+                     
         </ul>
       </div>
     </div>
@@ -109,12 +31,31 @@
 </template>
 
 <script>
+
 export default {
   data() {
-    return {};
+    return {
+      homelist: []
+    };
+  },
+  methods:{
+    gotoDetil(id){
+      this.$router.push({name:'Detail',params:{id}})
+    }
+  },
+  created() {
+    let script = document.createElement("script");
+    window.jQuery111308126296583805217_1553139083271 = data => {
+      // console.log('ggg',data);
+      this.homelist=data;
+    };
+    script.src =
+      "https://www.withfans.com/FHADMINM/appProduct/queryShopAndSubject?callback=jQuery111308126296583805217_1553139083271&FKEY=cbcea0f60488f87d4dd6f7a6ffedd47c&_=1553139083277";
+    document.body.appendChild(script);
   }
 };
 </script>
+
 
 <style scoped>
 .recommendProductList {

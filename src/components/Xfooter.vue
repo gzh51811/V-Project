@@ -15,6 +15,7 @@
           <span class="nav-text">{{nav.text}}</span>
         </a>
       </li>
+      <span class="yuandian">{{productNum}}</span>
     </ul>
   </div>
 </template>
@@ -59,6 +60,11 @@ export default {
     goto(nav, idx) {
       this.$router.push({ name: nav.name });
       this.index = idx;
+    }
+  },
+  computed:{
+    productNum(){
+      return this.$store.state.cartlist.length;
     }
   },
 
@@ -109,6 +115,20 @@ export default {
   display: block;
   margin-top: 0.16rem;
   font-size: 0.48rem;
+}
+.yuandian{
+  position:absolute;
+  right:3.2rem;
+  top:-0.4rem;
+  display: block;
+  width:1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #FD5A52;
+  color:#fff;
+  text-align: center;
+  line-height: 1rem;
+  font-size:0.6rem;
 }
 .active {
   color: red;

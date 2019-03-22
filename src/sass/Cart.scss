@@ -1,5 +1,11 @@
 .cartBox{
     clear:both;
+    position: absolute;
+    top:1.8rem;
+    left:0;
+    bottom: 4rem;
+    right:0;
+    overflow-y:auto;
 }
 .topTitleBack{
     text-align: center;
@@ -49,12 +55,7 @@
     }
 }
 .cartItemList{
-    position: absolute;
-    top:1.8rem;
-    left:0;
-    bottom: 0;
-    right:0;
-    overflow-y:auto;
+    
     .section{
         margin-bottom: 0.45rem;
         background: #fff;

@@ -82,11 +82,12 @@
         <span class="totalMoney">{{total}}</span>
         <button class="sett">
           <span class="jiezhang" v-show="show">结算(</span>
-          <span class="jiezhang" v-show="none">删除(</span>
-          <span class="productNum">{{productNum}}</span>)
+          <span class="jiezhang" v-show="none" @click="remove(cartlist.goods_id)">删除</span>
+          (<span class="productNum">{{productNum}}</span>)
         </button>
       </div>
     </div>
+   
   </div>
 </template>
 
@@ -104,6 +105,7 @@ export default {
   },
   computed: {
     ...mapState(["cartlist"]),
+    
     productNum(){
       return this.$store.state.cartlist.length;
     },
@@ -144,19 +146,28 @@ export default {
       this.show = !this.show;
       this.none = !this.none;
     },
-    heji(idx){console.log(this.cartlist[idx])
-        var totalPrice = 0;//临时总价
-        var qty = this.cartlist[idx].qty;
-        var price = this.cartlist[idx].current_price;
-         totalPrice += qty*price;
-        this.total =parseFloat(totalPrice);
+    remove(){
+
+    },
+    heji(idx){
+        // var total = 0;//临时总价
+        // this.selected.forEach(item=>{
+        //   if(item==idx){
+        //      this.cartlist.forEach((item,idx)=>{
+        //    this.total +=parseFloat(item.current_price);
+        //     })
+        //   }else{
+        //     this.total=0;
+        //   }
+        // })
+        
+        
+       
 
     },
     
-    ...mapMutations({
-      remove: "removeGoods"
-    })
-    // select(idx) {
+   
+    select(idx) {
     //   // 获取idx在数组中的位置
     //   let index = this.selected.indexOf(idx);
     //   if (index >= 0) {
@@ -167,10 +178,9 @@ export default {
     //   }
     // }
   },
-    crated(){
-      this.heji();
-  },
-};
+
+}
+}
 </script>
 
 <style lang="scss" scoped>
