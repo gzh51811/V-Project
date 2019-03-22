@@ -31,14 +31,14 @@
         </ul>
       </div>
       <!-- 空白区 -->
-      <div id="xie_kongbai">全部商品</div>
+      <div id="xie_kongbai"><h2>全部商品</h2></div>
 
       <div id="xie_quanvu" v-for="item in iii" :key="item.shopcommon_id">
         <img :src="item.pic_url" alt>
         <p>{{item.shop_label}}</p>
         <span>{{item.shop_name}}</span>
-        <h1>已出售{{item.attestation_type}}件</h1>
-        <h2>${{item.original_price}}</h2>
+        <h6>已出售{{item.attestation_type}}件</h6>
+        <h2>￥{{item.original_price}}:00</h2>
       </div>
     </div>
   </div>
@@ -81,7 +81,7 @@ export default {
 
     let script2 = document.createElement("script");
     script2.src =
-      "https://www.withfans.com/FHADMINM/appProduct/queryYUProductList3_v?callback=getDatahiu&pageNo=2&pageSize=20&FKEY=cbcea0f60488f87d4dd6f7a6ffedd47c&virtualuser_id=&type=2&_=1552993383794";
+      "https://www.withfans.com/FHADMINM/appProduct/queryYUProductList3_v?callback=getDatahiu&pageNo=1&pageSize=20&FKEY=cbcea0f60488f87d4dd6f7a6ffedd47c&virtualuser_id=&type=2&_=1553155760019";
     document.body.appendChild(script2);
   }
 };
@@ -89,19 +89,19 @@ export default {
 
 <style scoped>
 #xie_quanvu h2 {
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   float: left;
-  margin: 1rem 0px 0px 0.5rem;
+  margin: 0.4rem 0px 0px 0.25rem;
   color: red;
 }
-#xie_quanvu h1 {
-  margin: 1rem 3.5rem 0px 0px;
+#xie_quanvu h6 {
+  margin: 0.4rem 3.5rem 0px 0.2rem;
   font-size: 0.65rem;
   float: left;
   color: #999999;
 }
 #xie_quanvu span {
-  margin: 0.5rem 0 0 0;
+  margin: 0.5rem 0 0 0.2rem;
   width: 9.55rem;
   font-size: 0.65rem;
   height: 2.2rem;
@@ -110,12 +110,16 @@ export default {
 }
 
 #xie_quanvu p {
-  padding: 0.2rem;
-  width: 6rem;
+  color:#fff;
+  width: 2.7rem;
+  padding: 0 0.2rem 0 0.2rem;
+ overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 0.65rem;
-  border-radius: 30%;
- 
-  margin: 0rem 0px 0.25rem 6.5rem;
+  border-radius: 0.5rem;
+ background: #8d78e5;
+  margin: 0.5rem 0px 0.25rem 6.5rem;
   
 }
 #xie_quanvu img {
@@ -134,9 +138,15 @@ export default {
 
   
 }
+#xie_kongbai h2{
+font-size: 0.75rem;
+  margin: 0.5rem 0px 0.5rem 6rem;
+}
 #xie_kongbai {
-  font-size: 0.75rem;
-  margin: 0px 0px 0px 6rem;
+  display: block;
+  background-color: #f5f5f5f5;
+  width: 100%;
+  margin: 0.5rem 0 0.5rem 0;
   float: left;
 }
 #xie_tanxinghe {
@@ -181,7 +191,7 @@ export default {
 #tianjia ul li p {
   font-size: 0.55rem;
   margin: 0.25rem 0px 0.25rem 0.25rem;
-  font-size: 9px; 
+  font-size: 0.45rem; 
 }
 #tianjia ul li span {
   font-size: 0.55rem;

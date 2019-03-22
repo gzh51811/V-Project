@@ -1,8 +1,8 @@
 <template>
   <div>
       <!-- 头部 -->
-        <header class="topTitleBack ">
-            资讯详情</header>
+        <dir id="hao_topTitleBack"><img src="../assets/img/star02.png" @click="goBack()"><header class="topTitleBack ">资讯详情</header></dir>
+            
         <!-- 弹性盒 -->
         <div id="hao_tanxinhe">
             <p id="zixunxianqing_p">{{goodsinfo.shop_name}}</p>
@@ -29,13 +29,18 @@ export default {
       goodsinfo: {}
     };
   },
+  methods:{
+    goBack(){
+      this.$router.back()
+    }
+  },
   
 
   //获取id获取数据
   created() {
       // 如何获取id
       let goods_id = this.$route.params.id;
-    //   console.log(goods_id)
+      console.log(goods_id)
     
     window.getDatavv = data => {
     //    console.log('ggg',data)
@@ -54,6 +59,17 @@ export default {
 </script>
 
 <style>
+#hao_topTitleBack img{
+display: block;
+width: 0.5rem;
+height: 0.95rem;
+position: relative;
+    left: 18px;
+    top: 10px;                                               
+background-color: #666666;
+position: absolute;
+z-index: 999;
+}
 #hao_dianzan h2{
     font-size: 0.75rem;
     margin: 0px 0px 0px 7rem;
@@ -103,6 +119,7 @@ export default {
     font-size: 0.6rem;
     margin: 0px 0.5rem 0.7rem 0.5rem;
     color:#999999;
+    float: left;
   
 }
 #zixunxianqing_p{
@@ -117,7 +134,7 @@ export default {
     color:#999999;
 }
 #zixunxianqing_p_1b{
-     margin: 0px 3.5rem 0.7rem 0px;
+     margin: 0px 1.8rem 0.7rem 0px;
     font-size: 0.5rem ;
     float: left;
     color: red;
