@@ -21,7 +21,7 @@
          v-model="userName"
           class="loginInput left fontColor28"
           id="count"
-          placeholder="请输入邮箱或手机号"
+          placeholder="请输入用户名"
         >
       </div>
       <!--密码-->

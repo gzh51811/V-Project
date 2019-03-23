@@ -9,7 +9,7 @@
         <div class="block">
           <span class="demonstration"></span>
           <el-carousel height="150px" id="hao_lubotu_1" indicator-position="none">
-            <el-carousel-item v-for="item in goodslist" :key="item.shopcommon_id">
+            <el-carousel-item v-for="item in goodslist" :key="item.ido_name">
               <img :src="item.pic_url" style="width: 100%;height: 160px;">
             </el-carousel-item>
           </el-carousel>
@@ -23,18 +23,25 @@
 
       <div id="tianjia">
         <ul>
-          <li v-for="item in renmen" :key="item.shopcommon_id">
-            <img :src="item.ido_head_img" alt>
+          <li v-for="item in renmen" :key="item.shop_name">
+            <img :src="item.ido_head_img">
             <p>{{item.ido_name}}</p>
             <span>粉丝{{item.fans_count}}</span>
           </li>
         </ul>
       </div>
       <!-- 空白区 -->
-      <div id="xie_kongbai"><h2>全部商品</h2></div>
+      <div id="xie_kongbai">
+        <h2>全部商品</h2>
+      </div>
 
-      <div id="xie_quanvu" v-for="item in iii" :key="item.shopcommon_id" @click="goDetail(item.shopcommon_id)">
-        <img :src="item.pic_url" alt>
+      <div
+        id="xie_quanvu"
+        v-for="item in iii"
+        :key="item.shopcommon_id"
+        @click="goDetail(item.shopcommon_id)"
+      >
+        <img :src="item.pic_url">
         <p>{{item.shop_label}}</p>
         <span>{{item.shop_name}}</span>
         <h6>已出售{{item.attestation_type}}件</h6>
@@ -53,9 +60,9 @@ export default {
       iii: []
     };
   },
-  methods:{
-    goDetail(id){
-      this.$router.push({name:'Detail',params:{id}});
+  methods: {
+    goDetail(id) {
+      this.$router.push({ name: "Detail", params: { id } });
     }
   },
 
@@ -86,7 +93,6 @@ export default {
 
     let script2 = document.createElement("script");
     script2.src =
-      // "https://www.withfans.com/FHADMINM/appProduct/queryYUProductList3_v?callback=getDatahiu&pageNo=1&pageSize=20&FKEY=cbcea0f60488f87d4dd6f7a6ffedd47c&virtualuser_id=&type=2&_=1553085256807";
       "https://www.withfans.com/FHADMINM/appProduct/queryYUProductList3_v?callback=getDatahiu&pageNo=1&pageSize=20&FKEY=cbcea0f60488f87d4dd6f7a6ffedd47c&virtualuser_id=&type=2&_=1553155760019";
     document.body.appendChild(script2);
   }
@@ -116,17 +122,16 @@ export default {
 }
 
 #xie_quanvu p {
-  color:#fff;
+  color: #fff;
   width: 2.7rem;
   padding: 0 0.2rem 0 0.2rem;
- overflow: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 0.65rem;
   border-radius: 0.5rem;
- background: #8d78e5;
+  background: #8d78e5;
   margin: 0.5rem 0px 0.25rem 6.5rem;
-  
 }
 #xie_quanvu img {
   float: left;
@@ -140,8 +145,8 @@ export default {
   width: 16rem;
   height: 6rem;
 }
-#xie_kongbai h2{
-font-size: 0.75rem;
+#xie_kongbai h2 {
+  font-size: 0.75rem;
   margin: 0.5rem 0px 0.5rem 6rem;
 }
 #xie_kongbai {
@@ -192,7 +197,7 @@ font-size: 0.75rem;
 #tianjia ul li p {
   font-size: 0.55rem;
   margin: 0.25rem 0px 0.25rem 0.25rem;
-  font-size: 0.45rem; 
+  font-size: 0.45rem;
 }
 #tianjia ul li span {
   font-size: 0.55rem;

@@ -76,7 +76,6 @@
       >立即购买</div>
       <div class="left joinBtns normalBuyBtn buy FC4F4F" data-id="addCart" @click="joinCart()">加入购物车</div>
     </div>
-    
   </div>
 </template>
 
@@ -88,6 +87,7 @@ export default {
       goodsinfo: {}
     };
   },
+
   methods: {
     userCart(){
        //点击把需要传的东西 传过去
